@@ -1,0 +1,218 @@
+/* General Styles */
+body {
+    font-family: 'Varela Round', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #11eccf;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(85, 0, 142, 0.839);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Todo Container */
+.todo-container {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    max-width: 800px;
+    background-color: rgba(249, 249, 249, 0.962);
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #ffcc00;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+    animation: neon-border 5s linear infinite;
+}
+
+.task-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#new-task {
+    width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-task-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+#add-task-btn:hover {
+    background-color: #0056b3;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+#task-list input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
+
+#task-list input[type="text"]:read-only {
+    border: none;
+}
+
+#task-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.edit-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.edit-btn {
+    color: #090909;
+}
+
+.delete-btn {
+    color: #FF0000;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Neon Border Animation */
+@keyframes neon-border {
+    0% {
+        border-color: #ffcc00;
+        box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+    }
+    50% {
+        border-color: #00ffcc;
+        box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc;
+    }
+    100% {
+        border-color: #ffcc00;
+        box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00, 0 0 20px #ffcc00;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: rgb(101, 4, 166);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Mobile Screens */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .logo img {
+        width: 60px;
+        margin-right: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .todo-container {
+        width: 90%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    #new-task {
+        width: 70%;
+    }
+
+    #add-task-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    #task-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #task-list input[type="text"] {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
